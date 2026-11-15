@@ -489,7 +489,7 @@
         window.addEventListener('resize', () => {
             // 大幅なレイアウト崩れを防ぐためリロードを推奨するか、キャンバスサイズのみ再計算する
             // ここでは簡易的にサイズ再計算と壁の再配置を行う
-            if(state.isGameOver) return;
+            if(!world || state.isGameOver) return;
             
             GAME_WIDTH = container.clientWidth;
             GAME_HEIGHT = container.clientHeight;
